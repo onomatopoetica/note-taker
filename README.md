@@ -22,11 +22,11 @@ This application is for writing, saving, and deleting notes. It uses an Express.
  
 ## About The Project
 
-This project scope was to create an application that can be used to write, save, and delete notes. This application uses `Express.js` backend and saves and retrieves note data from a JSON file.
+This project scope was to create an application that can be used to write, save, and delete notes. This application uses an `Express.js` backend and saves and retrieves note data from a JSON file.
 
 * The application frontend has already been created, this project was to build the backend and connect the two.
 
-* The following HTML routes have been be created:
+* The following HTML routes were created:
 
   * GET `/notes` - Returns the `notes.html` file.
 
