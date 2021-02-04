@@ -2,6 +2,7 @@
 var express = require("express");
 const fs = require("fs");
 const path = require("path");
+// Uniqid is a hexatridecimal ID generator + creates unique id's based on current time, process + machine name
 var uniqid = require("uniqid");
 // const routes = require("./routes/routes");
 // Require routes.js file
@@ -18,32 +19,33 @@ app.use(express.static("public"));
 
 function getAllNotes() {
     const data = fs.readFileSync(path.join(__dirname, "db/db.json"), "utf8");
+    // console.log(data);
     return JSON.parse(data);
 }
 
 app.get("/api/notes", function (req, res) {
     console.log("Welcome to the Note Taker App!")
-    // TODO: Get the current notes from the database
+    // Getting the current notes from the database
     const notes = getAllNotes();
     res.json(notes);
 });
 
 app.post("/api/notes", function (req, res) {
-    // req.body hosts is equal to the JSON post sent from the user
-    // TODO: make sure this note has a unique id. There are NPM packages that can do this. Google "node unique id"
+    // The req.body object allows access to data in a string or JSON object from the client side
+    // Made sure this note has a unique id using uniqid npm
     let newNote = {
         title: req.body.title,
         text: req.body.text,
         id: uniqid()
     }
 
-    // TODO: Load all the notes from the db into an array
+    // Loading all the notes from the db into an array
     const notes = getAllNotes();
 
-    // TODO: Add the new note
+    // Adding the new note
     notes.push(newNote)
 
-    // TODO: Save the notes array back to the db file
+    // Saving the notes array back to the db file
     fs.writeFile(path.join(__dirname, "db/db.json"), JSON.stringify(notes), err => {
         if (err) throw err;
         res.json(newNote);
@@ -55,21 +57,26 @@ app.post("/api/notes", function (req, res) {
 app.delete("/api/notes/:id", function (req, res) {
 
     var noteId = req.params.id;
-
     // TODO: Find this note in my current notes from the db file and delete it.
+    // How do you find a specific id for deletion?
+
+
     // TODO: Load all the notes from the db into an array
     const notes = getAllNotes();
+    console.log(notes);
+    var filterNotes = notes.filter(note => note.id !== noteId);
+    console.log(filterNotes);
 
     // TODO: Write the new array to a the file.
-    fs.writeFile(path.join(__dirname, "db/db.json"), JSON.stringify(notes), err => {
+    fs.writeFile(path.join(__dirname, "db/db.json"), JSON.stringify(filterNotes), err => {
         if (err) throw err;
-        res.json(true);
+        res.json(filterNotes);
     });
 
-    res.send();
+    // res.json(filterNotes);
 });
 
-
+// Display notes.html when /notes is requested 
 app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
