@@ -1,5 +1,5 @@
 # Note Taker
-This application is for writing, saving, and deleting notes. It uses an express backend and saves and retrieves note data from a JSON file.
+This application is for writing, saving, and deleting notes. It uses an Express.js backend and saves and retrieves note data from a JSON file.
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/onomatopoetica/note-taker)  ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/onomatopoetica/note-taker)  ![GitHub watchers](https://img.shields.io/github/watchers/onomatopoetica/note-taker?label=Watch&style=social)  ![GitHub top language](https://img.shields.io/github/languages/top/onomatopoetica/note-taker)  ![GitHub license](https://img.shields.io/badge/license-MIT-blueviolet) <br> 
     
