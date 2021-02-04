@@ -1,27 +1,50 @@
 # Note Taker
 This application is for writing, saving, and deleting notes. It uses an express backend and saves and retrieves note data from a JSON file.
 
-## Description
+![GitHub last commit](https://img.shields.io/github/last-commit/onomatopoetica/note-taker)  ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/onomatopoetica/note-taker)  ![GitHub watchers](https://img.shields.io/github/watchers/onomatopoetica/note-taker?label=Watch&style=social)  ![GitHub top language](https://img.shields.io/github/languages/top/onomatopoetica/note-taker)  ![GitHub license](https://img.shields.io/badge/license-MIT-blueviolet) <br> 
+    
+## Project Links
+[Repo Link](https://github.com/onomatopoetica/note-taker) <br>
+**NOTE:** Since this application cannot be deployed on GitHub, the deployed app can be found on [Heroku](https://hidden-scrubland-60840.herokuapp.com/). Please see the **Demo** section below for an overview of its functionality and the **Getting Started** section for more information regarding installation, usage, contribution guidelines, tests and where to go for questions.
+    
+## Table of Contents
+1. [About The Project](#About-The-Project)
+1. [Project Links](#Project-Links)
+1. [Demo](#Demo)
+1. [Getting Started](#Getting-Started)
+1. [Installation](#Installation)
+1. [Usage](#Usage)
+1. [Tests](#Tests)
+1. [Contribution Guidelines](#Contribution-Guidelines)
+1. [Questions](#Questions)
+1. [Project Status](#Project-Status)
+1. [License](#License)
+ 
+## About The Project
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+This project scope was to create an application that can be used to write, save, and delete notes. This application uses `Express.js` backend and saves and retrieves note data from a JSON file.
 
-* The application frontend has already been created, it's your job to build the backend and connect the two.
+* The application frontend has already been created, this project was to build the backend and connect the two.
 
-* The following HTML routes should be created:
+* The following HTML routes have been be created:
 
-  * GET `/notes` - Should return the `notes.html` file.
+  * GET `/notes` - Returns the `notes.html` file.
 
-  * GET `*` - Should return the `index.html` file
+  * GET `*` - Returns the `index.html` file
 
-* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
+* The application has a `db.json` file on the backend that is used to store and retrieve notes using the `fs` module.
 
-* The following API routes should be created:
+* The following API routes were created:
 
-  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
+  * GET `/api/notes` - Reads the `db.json` file and returns all saved notes as JSON.
 
-  * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
+  * POST `/api/notes` - Receives a new note to save on the request body, adds it to the `db.json` file, and then returns the new note to the client.
 
-  * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+  * DELETE `/api/notes/:id` - Receives a query parameter containing the id of a note to delete. Each note is given a unique `id` when it's saved using `uniqid npm`. In order to delete a note, all notes from the `db.json` file are read, and the note with the deleted `id` property is removed from the `db.json` file. Finally, the notes are rewritten to the `db.json` file.
+  
+The dependencies are [Express.js](https://expressjs.com/), for robust routing (it is a fast, unopinionated, minimalist framework for node) and [uniqid](https://www.npmjs.com/package/uniqid) for very fast generation of unique ids on multiple processes and machines even if called at the same time.
+
+Because this application cannot be deployed on GitHub, a walkthrough video demonstrates its functionality below. The deployed app can be found on [Heroku](https://hidden-scrubland-60840.herokuapp.com/).
 
 ## User Story
 
@@ -43,36 +66,61 @@ Application should allow users to view previously saved notes.
 
 Application should allow users to delete previously saved notes.
 
-## Deploying the App
+## Demo
 
-You will not be able to deploy your server side code on GitHub pages. This app should be deployed on Heroku. Carefully follow the [Heroku Guide](../04-Important/HerokuGuide.md) for getting your app deployed on Heroku.
+#### The following is a video of the team profile generator application performance and its functionality:
 
-- - -
+[See how it works!](https://drive.google.com/placeholder)  
 
-## Commit Early and Often
+#### The following is a brief overview of the application in operation and rendering of the note taker app. See full video demonstration on "See how it works!" link above: 
+    
+<img src="https://github.com/onomatopoetica/note-taker/blob/main/assets/placeholder.GIF" alt="screenshot" title="app video" width="500" height="auto"> 
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+#### The following is a screenshot of the application and overview of its functionality: <br>
 
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
+<img src="assets/placeholder.png" alt="app screenshot" width="1000" height="auto">
 
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
+## Getting Started
+    
+#### Languages and libraries used in this project:
+* JavaScript 
+* Node.js
+* Uniqid npm
+* Express.js
+    
+#### Installation: 
+```  
+git clone - https://github.com/onomatopoetica/note-taker.git
+```
+#### Usage 
+```
+The project is a command line application using Inquirer npm which dynamically generates an HTML file from user's input. 
+See demo video above for more information on how it works.
+```
+#### Tests
+```
+Enter command 'npm install --save express uniqid' after cloning the repo to install `Express.js` and `uniqid npm`. The application will be invoked by using nodemon or entering the following in the command line: 'node server.js'. You will see `App listening on PORT 3000` in the console. You can then view the app on `http://localhost:3000/`.
+```    
+#### Contribution Guidelines
+```
+When contributing to this repository, please first discuss the change you wish to make via issue or email with the project team. See contact details below.
+```
+## Questions 
+#### Connect with the project team: [Onomatopoetica](https://github.com/onomatopoetica)
+   
+<details>
+    <summary>Contact</summary>
+    jendotb@gmail.com
+</details>
 
-Follow these guidelines for committing:
+## Project Status
+<details>
+    <summary>Current Project Activity</summary>
+    Active
+</details>
+    
+## License
+#### Distributed under the MIT License. See `LICENSE` for more information.
 
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
+##### This README was generated with :hearts:&nbsp; by [Good README Generator](https://github.com/onomatopoetica/Good-README-Generator).
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application. This should be the link to the url provided by Heroku. Be sure not to submit a link to the Heroku dashboard.
-
-* The URL of the GitHub repository
