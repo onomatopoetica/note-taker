@@ -4,9 +4,6 @@ const fs = require("fs");
 const path = require("path");
 // Uniqid is a hexatridecimal ID generator + creates unique id's based on current time, process + machine name
 var uniqid = require("uniqid");
-// const routes = require("./routes/routes");
-// Require routes.js file
-// const require = ("./routes/routes.js")(app);
 // Set up the Express App
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -15,7 +12,6 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-// app.use("/api", routes);
 
 function getAllNotes() {
     const data = fs.readFileSync(path.join(__dirname, "db/db.json"), "utf8");
@@ -54,32 +50,29 @@ app.post("/api/notes", function (req, res) {
 });
 
 // Setting up api/notes delete with id to delete a specific note
+// Find note in the db file and delete it by filtering through notes remaining after delete button pressed
 app.delete("/api/notes/:id", function (req, res) {
-
+    // The req.params property is an object containing properties mapped to the named route “parameters”
     var noteId = req.params.id;
-    // TODO: Find this note in my current notes from the db file and delete it.
-    // How do you find a specific id for deletion?
-
-
-    // TODO: Load all the notes from the db into an array
+    // Load all the notes from the db into an array
     const notes = getAllNotes();
     console.log(notes);
+    // Finding the notes that are REMAINING (after note deletion)
     var filterNotes = notes.filter(note => note.id !== noteId);
     console.log(filterNotes);
 
-    // TODO: Write the new array to a the file.
+    // Write the new array to a the file
     fs.writeFile(path.join(__dirname, "db/db.json"), JSON.stringify(filterNotes), err => {
         if (err) throw err;
         res.json(filterNotes);
     });
-
-    // res.json(filterNotes);
 });
 
 // Display notes.html when /notes is requested 
 app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
+
 // Display index.html when any other route is requested 
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"));
