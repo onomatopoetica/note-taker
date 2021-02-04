@@ -99,9 +99,8 @@ See demo video above for more information on how it works.
 ```
 #### Tests
 ```
-Enter command 'npm install --save express uniqid' after cloning the repo to install `Express.js` and `uniqid npm`. 
-The application will be invoked by using nodemon or entering the following in the command line: 'node server.js'. 
-You will see `App listening on PORT 3000` in the console. You can then view the app on `http://localhost:3000/`.
+Enter command 'npm install --save express uniqid' after cloning the repo to install Express.js and uniqid npm. The application will be invoked by using nodemon
+or entering the following in the command line: 'node server.js'. You will see `App listening on PORT 3000` in the console. You can then view the app on `http://localhost:3000/`.
 ```    
 #### Contribution Guidelines
 ```
