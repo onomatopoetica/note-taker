@@ -76,9 +76,10 @@ Application should allow users to delete previously saved notes.
     
 <img src="https://github.com/onomatopoetica/note-taker/blob/main/assets/placeholder.GIF" alt="screenshot" title="app video" width="500" height="auto"> 
 
-#### The following is a screenshot of the application and overview of its functionality: <br>
+#### The following are screenshots of the application and overview of its functionality: <br>
 
-<img src="assets/placeholder.png" alt="app screenshot" width="1000" height="auto">
+<img src="/public/assets/noteTaker.png" alt="app screenshot" width="1000" height="auto">
+<img src="/public/assets/savedNotes.png" alt="app screenshot" width="1000" height="auto">
 
 ## Getting Started
     
