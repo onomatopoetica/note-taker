@@ -57,11 +57,11 @@ app.delete("/api/notes/:id", function (req, res) {
     // Load all the notes from the db into an array
     const notes = getAllNotes();
     console.log(notes);
-    // Finding the notes that are REMAINING (after note deletion)
+    // Finding the notes that are REMAINING after note deletion
     var filterNotes = notes.filter(note => note.id !== noteId);
     console.log(filterNotes);
 
-    // Write the new array to a the file
+    // Write the new array to the file
     fs.writeFile(path.join(__dirname, "db/db.json"), JSON.stringify(filterNotes), err => {
         if (err) throw err;
         res.json(filterNotes);
