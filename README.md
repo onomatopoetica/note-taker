@@ -83,7 +83,7 @@ Application should allow users to delete previously saved notes.
 
 ## Getting Started
     
-#### Languages and libraries used in this project:
+#### Languages, frameworks, packages + runtime environments used in this project:
 * JavaScript 
 * Node.js
 * Uniqid npm
