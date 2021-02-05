@@ -70,7 +70,7 @@ Application should allow users to delete previously saved notes.
 
 #### The following is a video of the team profile generator application performance and its functionality:
 
-[See how it works!](https://drive.google.com/placeholder)  
+[See how it works!](https://drive.google.com/file/d/1MUjzTASE36iAurge8m8GzCurxOHMTM4q/view?usp=sharing)  
 
 #### The following is a brief overview of the application in operation and rendering of the note taker app. See full video demonstration on "See how it works!" link above: 
     
