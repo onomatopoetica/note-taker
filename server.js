@@ -2,7 +2,7 @@
 var express = require("express");
 const fs = require("fs");
 const path = require("path");
-// Uniqid is a hexatridecimal ID generator + creates unique id's based on current time, process + machine name
+// Uniqid is a hexatridecimal ID generator + creates unique ids based on current time, process + machine name
 var uniqid = require("uniqid");
 // Set up the Express App
 var app = express();
