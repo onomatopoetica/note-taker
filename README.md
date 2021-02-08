@@ -68,11 +68,11 @@ Application should allow users to delete previously saved notes.
 
 ## Demo
 
-#### The following is a video of the team profile generator application performance and its functionality:
+#### The following is a video of the application's performance and functionality:
 
 [See how it works!](https://drive.google.com/file/d/1MUjzTASE36iAurge8m8GzCurxOHMTM4q/view?usp=sharing)  
 
-#### The following is a brief overview of the application in operation and rendering of the note taker app. See full video demonstration on "See how it works!" link above: 
+#### The following is a brief overview of the note taker application in operation. See full video demonstration on "See how it works!" link above: 
     
 <img src="https://github.com/onomatopoetica/note-taker/blob/main/public/assets/puppyIpsum.GIF" alt="screenshot" title="app video" width="900" height="auto"> 
 
@@ -100,7 +100,7 @@ See demo video above for more information on how it works.
 ```
 #### Tests
 ```
-Enter command 'npm install --save express uniqid' after cloning the repo to install Express.js and uniqid npm. The application will be invoked by using nodemon
+Enter command 'npm install express uniqid' after cloning the repo to install Express.js and uniqid npm. The application will be invoked by using nodemon
 or entering the following in the command line: 'node server.js'. You will see 'App listening on PORT 3000' in the console. You can then view the app on http://localhost:3000/.
 ```    
 #### Contribution Guidelines
